@@ -1,5 +1,5 @@
 var CartItem = require('./cart-item');
-
+var _ = require('../../../lib/lodash-2.4.1/lodash.js');
 function Scanner(items) {
   this.items = items;
 }
