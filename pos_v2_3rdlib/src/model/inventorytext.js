@@ -1,3 +1,5 @@
+var KindText = require('./kindtext');
+
 function InventoryText(cartItems){
   this.cartItems = cartItems;
 }
@@ -15,3 +17,5 @@ InventoryText.prototype.getInventoryText = function(){
          kindText.getSummaryText(cartItems) +
          '**********************';
 };
+
+module.exports = InventoryText;

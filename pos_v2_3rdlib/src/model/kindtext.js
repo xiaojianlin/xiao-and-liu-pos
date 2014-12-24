@@ -1,3 +1,5 @@
+var Promotion = require('./promotion');
+
 function KindText(cartItems){
   this.cartItems = cartItems;
 }
@@ -87,3 +89,5 @@ KindText.prototype.getSummaryText = function(cartItems) {
                 '(元)\n';
   return summaryText;
 };
+
+module.exports = KindText;

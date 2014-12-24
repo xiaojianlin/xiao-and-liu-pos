@@ -1,3 +1,6 @@
+var Item = require("../src/model/item");
+var Promotion = require("../src/model/promotion");
+
 function loadAllItems() {
     return [
         new Item('ITEM000000', '可口可乐', '瓶', 3.00),
@@ -18,3 +21,6 @@ function loadPromotions() {
         ])
     ];
 }
+
+module.exports = loadAllItems;
+module.exports = loadPromotions;

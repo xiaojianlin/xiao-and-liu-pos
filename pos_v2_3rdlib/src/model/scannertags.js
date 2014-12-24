@@ -1,3 +1,6 @@
+var CartItems = ('./cartitems');
+var loadAllItems = ('../../spec/fixtures');
+
 function ScannerTags(tags){
   this.tags= tags;
 }
@@ -35,3 +38,5 @@ ScannerTags.prototype.getCartItems = function(cartItems, count, allItems, barcod
   }
   return cartItems;
 };
+
+module.exports = ScannerTags;

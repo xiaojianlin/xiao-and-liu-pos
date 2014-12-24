@@ -1,3 +1,5 @@
+var loadPromotions = require('../../spec/fixtures');
+
 function Promotion(type, barcodes) {
     this.type = type;
     this.barcodes = barcodes || [];
@@ -44,3 +46,5 @@ Promotion.prototype.getPromotionArray = function(cartItems) {
   });
   return promotionArray;
 };
+
+module.exprots = Promotion;

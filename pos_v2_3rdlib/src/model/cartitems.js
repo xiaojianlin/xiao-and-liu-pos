@@ -9,3 +9,5 @@ CartItems.prototype.getItem = function(){
 CartItems.prototype.getCount = function(){
   return this.count;
 };
+
+module.exports = CartItems;
