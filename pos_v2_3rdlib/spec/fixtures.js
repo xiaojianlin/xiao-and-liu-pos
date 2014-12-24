@@ -1,5 +1,5 @@
-var Item = require("../src/model/item");
-var Promotion = require("../src/model/promotion");
+var loadAllItems = require('../src/model/item');
+var loadPromotions = require('../src/model/promotion');
 
 function loadAllItems() {
     return [
@@ -21,6 +21,5 @@ function loadPromotions() {
         ])
     ];
 }
-
 module.exports = loadAllItems;
 module.exports = loadPromotions;

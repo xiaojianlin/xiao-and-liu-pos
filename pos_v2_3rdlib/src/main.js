@@ -1,8 +1,23 @@
-var ScannerTags = require('./model/scannertags');
-var InventoryText = require('./model/inventorytext');
+var Scanner = require('./model/scanner');
+var Cart = require('./model/cart');
+var Promotion = require('./model/promotion');
+var PromotionCalculator = require('./model/promotion-calculator');
 
-function printInventory(tags){
-  var scannerTags = new ScannerTags(tags);
-  var inventoryText = new InventoryText(scannerTags.splitTags());
-  console.log(inventoryText.getInventoryText());
+function printInventory(tags) {
+
+  var scanner = new Scanner(Item.all());
+
+  var cart = new Cart();
+
+  _.forEach(tags, function(tag) {
+
+    var cartItem = scanner.scan(tag);
+
+    cart.addCartItem(cartItem);
+  });
+
+  var promotions = Promotion.all();
+  PromotionCalculator.calculateCartItems(cart.cartItems, promotions);
+
+  console.log(cart.toString());
 }
