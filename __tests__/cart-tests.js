@@ -42,11 +42,23 @@ describe('Cart', function() {
       getSubtotal = jest.genMockFn();
       getSubtotal.mockReturnValue(3);
 
-      cart.cartItems = [{getSubtotal : getSubtotal}];
+      cart.cartItems = [{getSubtotal : getSubtotal},
+                        {getSubtotal : getSubtotal}];
 
       var result = cart.getTotalAmount();
 
-      expect(result).toBe(3);
+      expect(result).toBe(6);
+    });
+  });
+
+  describe('#getSavedAmount', function() {
+    it('should return savedAmount', function() {
+
+      cart.cartItems =[{savedPrice : 3},{savedPrice : 3}];
+
+      var result = cart.getSavedAmount();
+
+      expect(result).toBe(6);
     });
   });
 
