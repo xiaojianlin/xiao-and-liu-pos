@@ -17,6 +17,14 @@ describe('cart-item', function() {
     });
   });
 
+  describe('#hasPromotion', function() {
+    it('should return corret hasPromotion', function() {
+      var result = cartItem.hasPromotion();
+      expect(result).toEqual(false);
+    });
+  });
+
+
 
 
 
