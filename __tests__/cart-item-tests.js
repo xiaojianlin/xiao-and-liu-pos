@@ -24,7 +24,12 @@ describe('cart-item', function() {
     });
   });
 
-
+  describe('#getOriginSubtotal', function() {
+    it('should return corret originSubtotal', function() {
+      var result = cartItem.getOriginSubtotal();
+      expect(result).toEqual(3);
+    });
+  });
 
 
 
