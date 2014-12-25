@@ -2,6 +2,8 @@ var Scanner = require('./model/scanner');
 var Cart = require('./model/cart');
 var Promotion = require('./model/promotion');
 var PromotionCalculator = require('./model/promotion-calculator');
+var Item = require('./model/item');
+var _ = require('lodash');
 
 function printInventory(tags) {
 
@@ -21,3 +23,5 @@ function printInventory(tags) {
 
   console.log(cart.toString());
 }
+
+exports.printInventory = printInventory;

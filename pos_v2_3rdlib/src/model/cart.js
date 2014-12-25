@@ -1,3 +1,5 @@
+var _ = require('lodash');
+var moment = require('moment');
 function Cart() {
   this.cartItems = [];
 }
