@@ -3,11 +3,6 @@ jest.autoMockOff();
 describe('.printInventory', function() {
   it('should return corret list', function() {
 
-    var Item = require('../pos_v2_3rdlib/src/model/item');
-    var Scanner = require('../pos_v2_3rdlib/src/model/scanner');
-    var Cart = require('../pos_v2_3rdlib/src/model/cart');
-    var Promotion = require('../pos_v2_3rdlib/src/model/promotion');
-    var PromotionCalculator = require('../pos_v2_3rdlib/src/model/promotion-calculator');
     var printInventory = require('../pos_v2_3rdlib/src/main');
     var moment = require('moment');
 

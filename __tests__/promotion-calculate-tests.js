@@ -2,7 +2,7 @@ jest.dontMock('../pos_v2_3rdlib/src/model/promotion-calculator.js');
 jest.dontMock('lodash');
 
 describe('PromotionCalculator', function() {
-  describe('#calculate', function() {
+  describe(',calculate', function() {
     it('should return corret number', function() {
       var PromotionCalculator = require('../pos_v2_3rdlib/src/model/promotion-calculator.js');
 
