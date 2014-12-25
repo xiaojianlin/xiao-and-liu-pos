@@ -1,11 +1,15 @@
 jest.dontMock('../pos_v2_3rdlib/src/model/cart');
 jest.dontMock('lodash');
 describe('Cart', function() {
+  var Cart,cart;
+
+  beforeEach(function(){
+    Cart = require('../pos_v2_3rdlib/src/model/cart');
+    cart = new Cart();
+  });
+
   describe('#addCartItem', function() {
     it('should update cartItems', function() {
-      var Cart = require('../pos_v2_3rdlib/src/model/cart');
-      var cart = new Cart();
-
       getBarcode = jest.genMockFn();
       getBarcode.mockReturnValue('ITEM000001');
 
@@ -16,8 +20,6 @@ describe('Cart', function() {
                           unit:'瓶',
                           price:3},
                         count : 1,
-                        savedCount : 0,
-                        savedPrice : 0,
                         getBarcode : getBarcode
                       }];
       var cartItem = {
@@ -27,14 +29,25 @@ describe('Cart', function() {
                         unit:'瓶',
                         price:3},
                       count : 1,
-                      savedCount : 0,
-                      savedPrice : 0,
                       getBarcode : getBarcode
                       };
 
       cart.addCartItem(cartItem);
       expect(cart.cartItems[0].count).toBe(2);
-
     });
   });
+
+  describe('#getTotalAmount', function() {
+    it('should return totalAmount', function() {
+      getSubtotal = jest.genMockFn();
+      getSubtotal.mockReturnValue(3);
+
+      cart.cartItems = [{getSubtotal : getSubtotal}];
+
+      var result = cart.getTotalAmount();
+
+      expect(result).toBe(3);
+    });
+  });
+
 });
