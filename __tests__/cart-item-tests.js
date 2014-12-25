@@ -8,6 +8,7 @@ describe('cart-item', function() {
   describe('#getBarcode', function() {
     it('should return corret barcode', function() {
       var result = cartItem.getBarcode();
+
       expect(result).toEqual('ITEM000001');
     });
   });
@@ -15,6 +16,7 @@ describe('cart-item', function() {
   describe('#getPrice', function() {
     it('should return corret price', function() {
       var result = cartItem.getPrice();
+
       expect(result).toBe(3);
     });
   });
@@ -22,6 +24,7 @@ describe('cart-item', function() {
   describe('#hasPromotion', function() {
     it('should return corret hasPromotion', function() {
       var result = cartItem.hasPromotion();
+
       expect(result).toEqual(true);
     });
   });
@@ -29,6 +32,7 @@ describe('cart-item', function() {
   describe('#getOriginSubtotal', function() {
     it('should return corret originSubtotal', function() {
       var result = cartItem.getOriginSubtotal();
+
       expect(result).toBe(15);
     });
   });
@@ -36,6 +40,7 @@ describe('cart-item', function() {
   describe('#getSubtotal', function() {
     it('should return corret subtotal', function() {
       var result = cartItem.getSubtotal();
+
       expect(result).toBe(12);
     });
   });
@@ -44,6 +49,7 @@ describe('cart-item', function() {
     it('should return corret toString', function() {
       var result = cartItem.toString();
       var string = '名称：雪碧，数量：5瓶，单价：3.00(元)，小计：12.00(元)';
+      
       expect(result).toEqual(string);
     });
   });

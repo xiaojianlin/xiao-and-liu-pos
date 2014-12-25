@@ -2,8 +2,10 @@ jest.dontMock('../pos_v2_3rdlib/src/model/item.js');
 describe('item', function() {
   describe(',all', function() {
     it('should return corret array', function() {
+      
       var Item = require('../pos_v2_3rdlib/src/model/item');
       var result = Item.all();
+
       expect(result).toEqual(
           [new Item('ITEM000000', '可口可乐', '瓶', 3.00),
           new Item('ITEM000001', '雪碧', '瓶', 3.00),

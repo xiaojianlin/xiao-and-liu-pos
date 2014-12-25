@@ -2,6 +2,7 @@ jest.autoMockOff();
 
 describe('.printInventory', function() {
   it('should return corret list', function() {
+
     var Item = require('../pos_v2_3rdlib/src/model/item');
     var Scanner = require('../pos_v2_3rdlib/src/model/scanner');
     var Cart = require('../pos_v2_3rdlib/src/model/cart');
@@ -21,6 +22,7 @@ describe('.printInventory', function() {
       'ITEM000005',
       'ITEM000005'
     ];
+
     console.log = jest.genMockFn();
     printInventory.printInventory(inputs);
 
